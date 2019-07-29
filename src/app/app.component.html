@@ -1,0 +1,21 @@
+<!-- Form starts -->
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div>
+       <input id="male" type="radio" value="male" name="gender" formControlName="gender">
+       <label class="custom-control-label" for="male">Male</label>
+    </div>
+ 
+    <div>
+       <input id="female" type="radio" value="female" name="gender" formControlName="gender">
+       <label class="custom-control-label" for="female">Female</label>
+    </div>
+ 
+    <!-- Showing error method -->
+    <div *ngIf="isSubmitted && myForm.errors?.required">
+       <p>Please select either value</p>
+    </div>
+    
+    <button type="submit">Submit</button>
+ </form><!-- Form ends -->
+
+ <app-root></app-root>
